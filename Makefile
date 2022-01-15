@@ -1,5 +1,5 @@
-.PHONY: db-build
-db-build:
+.PHONY: build
+build:
 	@docker build -t ${BOT_CONTAINER_NAME} .
 
 .PHONY: db-start

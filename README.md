@@ -10,29 +10,32 @@ This discord bot is built with python using the [discord.py library](https://dis
 # Clone FoDBot source
 git clone https://github.com/mathew-fleisch/FoDBot-SQL.git && cd FoDBot-SQL
 
-# Build docker container to run python
-docker build -t fodbot .
+# Fill out .env vars...
+cp .env-example .env
 
+# Start mysql container (~30 second startup time)
+make db-start
 
-# Start up mysql db in a docker container
-source .env
-docker run \
-  --rm \
-  -dit \
-  -p 3306:3306 \
-  -e MYSQL_ROOT_PASSWORD=${DB_PASS} \
-  --name ${DB_CONTAINER_NAME} \
-  mysql:latest
+# (optional) Load sql dump into database
+make db-load
 
+# Build local container to run bot in
+make build
 
-# Run FoDBot as container
-docker run \
-  --rm \
-  -it \
-  --name FoD \
-  -v ${PWD}:/root/FoDBot-SQL \
-  -w /root/FoDBot-SQL \
-  fodbot
+# Start bot (ctrl+c to stop)
+make start-docker
+
+# Mysql session with database
+make db-mysql
+
+# Bash session in mysql container
+make db-bash
+
+# Mysql dump to file
+make db-dump
+
+# Stop mysql container
+make db-stop
 
 # Blatent cheating
 UPDATE users SET score=42069, spins=420, jackpots=69, wager=25, high_roller=1 WHERE id=1;
