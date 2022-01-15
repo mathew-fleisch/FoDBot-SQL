@@ -1,7 +1,136 @@
 {
+  "help": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/help.json",
+    "parameters": []
+  },
+  "triv": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/triv.json",
+    "parameters": [{
+      "name": "category",
+      "allowed": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],
+      "required": false
+    }]
+  },
+  "tuvix": {
+    "channels": [891412924193726465],
+    "enabled": true,
+    "data": "data/all_characters.txt",
+    "parameters": []
+  },
+  "dustbuster": {
+    "channels": [891412924193726465],
+    "enabled": true,
+    "data": "data/all_characters.txt",
+    "parameters": []
+  },
+  "fmk": {
+    "channels": [891412924193726465],
+    "enabled": true,
+    "data": "data/all_characters.txt",
+    "parameters": []
+  },
+  "trektalk": {
+    "channels": [891412924193726465],
+    "enabled": true,
+    "data": "data/prompts.txt",
+    "parameters": []
+  },
+  "trekduel": {
+    "channels": [891412924193726465],
+    "enabled": true,
+    "data": "data/duel_characters.txt",
+    "parameters": []
+  },
+  "poker": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/poker.json",
+    "parameters": []
+  },
+  "ping": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": []
+  },
+  "categories": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/triv.json",
+    "parameters": []
+  },
+  "shop": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/shop.json",
+    "parameters": [{
+      "name": "list",
+      "allowed": ["profiles","badges","roles"],
+      "required": true
+    }]
+  },
+  "buy": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/shop.json",
+    "parameters": [{
+      "name": "list",
+      "allowed": ["profile","badge","role"],
+      "required": true
+    }]
+  },
   "slots": {
     "channels": [891412391026360320],
-    "help": "slots/help.txt",
-    "configuration": "slots/configuration.json"
-  }  
+    "enabled": true,
+    "data": "data/slots.json",
+    "parameters": [{
+      "name": "show",
+      "allowed": ["tng","ds9","voy","holodeck","ships"],
+      "required": false
+    }]
+  },
+  "testslots": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": "data/testslots.json",
+    "parameters": []
+  },
+  "setwager": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": [{
+      "name": "wager_value",
+      "allowed": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
+      "required": true
+    }]
+  },
+  "jackpot": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": []
+  },
+  "jackpots": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": []
+  },
+  "scores": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": []
+  },
+  "profile": {
+    "channels": [821892686201094154],
+    "enabled": true,
+    "data": null,
+    "parameters": []
+  }
 }
