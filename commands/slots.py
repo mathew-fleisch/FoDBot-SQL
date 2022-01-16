@@ -11,12 +11,12 @@ async def slots(message:discord.Message):
   # print(message)
   # print(config)
   # Load slots data
-  f = open(config["slots"]["data"])
+  f = open(config["commands"]["slots"]["data"])
   SLOTS = json.load(f)
   f.close()
   # print(SLOTS)
   # Use the option the user selected or pick a random show
-  if message.content.lower().replace("!slots ", "") in config["slots"]["parameters"][0]["allowed"]:
+  if message.content.lower().replace("!slots ", "") in config["commands"]["slots"]["parameters"][0]["allowed"]:
     show = message.content.lower().replace("!slots ", "").upper()
   else:
     show = random.choice(["TNG", "DS9", "VOY", "HOLODECK"])
@@ -115,11 +115,11 @@ async def slots(message:discord.Message):
 # This function is the main entrypoint of the !testslots command
 # and will run the !slots command 100,000 times to gather statistics
 async def testslots(message:discord.Message):
-  f = open(config["testslots"]["data"])
+  f = open(config["commands"]["testslots"]["data"])
   allowlist = json.load(f)
   f.close()
   if message.author.id in allowlist:
-    f = open(config["slots"]["data"])
+    f = open(config["commands"]["slots"]["data"])
     SLOTS = json.load(f)
     f.close()
     if message.content.lower().replace("!testslots ", "") in ["ds9", "tng", "voy", "holodeck", "ships"]:

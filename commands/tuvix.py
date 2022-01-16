@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !tuvix command
 # and will a user's wager value to the amount passed between 1-25
 async def tuvix(message:discord.Message):
-  f = open(config["tuvix"]["data"])
+  f = open(config["commands"]["tuvix"]["data"])
   tuvixes = f.read().splitlines()
   f.close()
   pick_1 = random.choice(tuvixes)

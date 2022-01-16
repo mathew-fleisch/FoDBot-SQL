@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !fmk command
 # and will a user's wager value to the amount passed between 1-25
 async def fmk(message:discord.Message):
-  f = open(config["fmk"]["data"])
+  f = open(config["commands"]["fmk"]["data"])
   fmk_characters = f.read().splitlines()
   f.close()
   choices = random.sample(fmk_characters, k=3)

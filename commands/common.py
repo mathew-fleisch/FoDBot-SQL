@@ -31,6 +31,11 @@ f = open(BOT_CONFIGURATION_FILEPATH)
 config = json.load(f)
 f.close()
 client = discord.Client()
+POKER_GAMES = {}
+TRIVIA_RUNNING = False
+TRIVIA_DATA = {}
+TRIVIA_MESSAGE = None
+TRIVIA_ANSWERS = {}
 
 def getDB():
   db = mysql.connector.connect(
@@ -78,8 +83,8 @@ def seed_db():
 # used in all commands described in the configuration object
 def uniq_channels(config):
   tkeys = []
-  for key in config.keys():
-    tkeys = tkeys + config[key]["channels"]
+  for key in config["commands"].keys():
+    tkeys = tkeys + config["commands"][key]["channels"]
   res = []
   [res.append(int(x)) for x in tkeys if x not in res]
   return res
@@ -225,4 +230,4 @@ def increase_jackpot(amt):
   db.commit()
   query.close()
   db.close()
-  
+

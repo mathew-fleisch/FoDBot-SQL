@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !buy command
 # and will a user's wager value to the amount passed between 1-25
 async def buy(message:discord.Message):
-  f = open(config["buy"]["data"])
+  f = open(config["commands"]["buy"]["data"])
   buy_data = json.load(f)
   f.close()
   buy_string = message.content.lower().replace("!buy ", "").split()

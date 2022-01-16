@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !dustbuster command
 # and will a user's wager value to the amount passed between 1-25
 async def dustbuster(message:discord.Message):
-  f = open(config["dustbuster"]["data"])
+  f = open(config["commands"]["dustbuster"]["data"])
   characters = f.read().splitlines()
   f.close()
   crew = []

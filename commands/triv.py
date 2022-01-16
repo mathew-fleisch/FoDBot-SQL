@@ -1,34 +1,7 @@
 from trivia import trivia
 from .common import *
 from .jackpot import get_jackpot
-
-TRIVIA_RUNNING = False
-TRIVIA_DATA = {}
-TRIVIA_MESSAGE = None
-TRIVIA_ANSWERS = {}
-
-# triv() - Entrypoint for !triv command
-# message[required]: discord.Message
-# This function is the main entrypoint of the !triv command
-# and will display the possible trivia trivia
-async def triv(message:discord.Message):
-  f = open(config["categories"]["data"])
-  trivia_data = json.load(f)
-  f.close()
-  if TRIVIA_RUNNING:
-    await message.channel.send("Trivia is in progress, please wait!")
-  else:
-    trivia_category = message.content.lower().replace("!triv ", "").strip()
-    if trivia_category.isnumeric() and int(trivia_category) > 0 and int(trivia_category) < len(trivia_data["categories"]):
-      
-      trivia_cat_id = int(trivia_data["categories"][int(trivia_category)-1])
-      print("Starting category trivia quiz ", trivia_cat_id)
-      await trivia_quiz.start(category=trivia_cat_id)
-    else:
-      await trivia_quiz.start()
-
-
-
+from .poker import *
 
 @tasks.loop(seconds=20,count=1)
 async def trivia_quiz(category=None):
@@ -57,7 +30,7 @@ async def trivia_quiz(category=None):
     embed.add_field(name="** **", value="{}: {} {}".format(reactions[i],ans,maybe_newline), inline=False)
     i += 1
   embed.set_footer(text="React below with your answer!")
-  channel = client.get_channel(config["triv"]["channels"][0])
+  channel = client.get_channel(config["commands"]["triv"]["channels"][0])
   TRIVIA_MESSAGE = await channel.send(embed=embed, file=thumb)
   for react in reactions:
     await TRIVIA_MESSAGE.add_reaction(react)
@@ -76,7 +49,7 @@ async def end_trivia():
   for ans in TRIVIA_ANSWERS:
     if TRIVIA_ANSWERS[ans] == TRIVIA_DATA["correct_emoji"]:
       correct_guessers.append(get_player(ans))
-  channel = client.get_channel(config["triv"]["channels"][0])
+  channel = client.get_channel(config["commands"]["triv"]["channels"][0])
   embed = discord.Embed(title="Trivia Complete!", description="⠀\n⠀\nThe correct answer was:\n {} **{}**\n⠀\n⠀{}".format(TRIVIA_DATA["correct_emoji"], TRIVIA_DATA["correct_answer"], " "*47))
   if len(correct_guessers) > 0:
     for player in correct_guessers:
@@ -91,3 +64,46 @@ async def end_trivia():
   TRIVIA_RUNNING = False
   TRIVIA_MESSAGE = None
   await channel.send(embed=embed)
+
+
+@client.event
+async def on_raw_reaction_add(payload:discord.RawReactionActionEvent):
+  global TRIVIA_ANSWERS, POKER_GAMES
+  if payload.user_id != client.user.id:
+    # poker reacts
+    if payload.message_id in POKER_GAMES:
+      if payload.user_id == POKER_GAMES[payload.message_id]["user"]:
+        if payload.emoji.name == "✅":
+          await resolve_poker(payload.message_id)
+      else:
+        user = await client.fetch_user(payload.user_id)
+        await POKER_GAMES[payload.message_id]["message"].remove_reaction(payload.emoji,user)
+    # trivia reacts
+    if TRIVIA_MESSAGE and payload.message_id == TRIVIA_MESSAGE.id:
+      #emoji = await discord.utils.get(TRIVIA_MESSAGE.reactions, emoji=payload.emoji.name)
+      user = await client.fetch_user(payload.user_id)
+      await TRIVIA_MESSAGE.remove_reaction(payload.emoji, user)
+      TRIVIA_ANSWERS[payload.user_id] = payload.emoji.name
+
+
+# triv() - Entrypoint for !triv command
+# message[required]: discord.Message
+# This function is the main entrypoint of the !triv command
+# and will display the possible trivia trivia
+async def triv(message:discord.Message):
+  f = open(config["commands"]["categories"]["data"])
+  trivia_data = json.load(f)
+  f.close()
+  if TRIVIA_RUNNING:
+    await message.channel.send("Trivia is in progress, please wait!")
+  else:
+    trivia_category = message.content.lower().replace("!triv ", "").strip()
+    if trivia_category.isnumeric() and int(trivia_category) > 0 and int(trivia_category) < len(trivia_data["categories"]):
+      
+      trivia_cat_id = int(trivia_data["categories"][int(trivia_category)-1])
+      print("Starting category trivia quiz ", trivia_cat_id)
+      await trivia_quiz.start(category=trivia_cat_id)
+    else:
+      await trivia_quiz.start()
+
+

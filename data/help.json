@@ -10,7 +10,7 @@
   "channels": [821892686201094154]
 },{
   "name": "convo",
-  "enabled": false,
+  "enabled": true,
   "file": "data/help/convo.txt",
   "channels": [821892686201094154]
 },{
@@ -20,7 +20,7 @@
   "channels": [821892686201094154]
 },{
   "name": "quiz",
-  "enabled": false,
+  "enabled": true,
   "file": "data/help/quiz.txt",
   "channels": [821892686201094154]
 }]

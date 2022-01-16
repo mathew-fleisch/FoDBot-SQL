@@ -6,7 +6,7 @@ from .common import *
 # and will display each help message in the channel that it was
 # initiated, for the channel it was initiated.
 async def help(message:discord.Message):
-  f = open(config["help"]["data"])
+  f = open(config["commands"]["help"]["data"])
   help_data = json.load(f)
   f.close()
   for help_page in help_data:

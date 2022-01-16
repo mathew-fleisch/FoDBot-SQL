@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !trektalk command
 # and will a user's wager value to the amount passed between 1-25
 async def trektalk(message:discord.Message):
-  f = open(config["trektalk"]["data"])
+  f = open(config["commands"]["trektalk"]["data"])
   prompts = f.read().splitlines()
   f.close()
   pick = random.choice(prompts)

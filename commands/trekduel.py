@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !trekduel command
 # and will a user's wager value to the amount passed between 1-25
 async def trekduel(message:discord.Message):
-  f = open(config["trekduel"]["data"])
+  f = open(config["commands"]["trekduel"]["data"])
   characters = f.read().splitlines()
   f.close()
   war_intros = ["War! Hoo! Good god y'all!", "War! We're going to war!", "That nonsense is *centuries* behind us!", "There's been no formal declaration, sir.", "Time to pluck a pigeon!"]

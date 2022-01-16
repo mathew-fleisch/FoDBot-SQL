@@ -16,6 +16,7 @@ from commands.triv import *
 from commands.trekduel import trekduel
 from commands.trektalk import trektalk
 from commands.tuvix import tuvix
+from commands.quiz import quiz
 print("> ENVIRONMENT VARIABLES AND COMMANDS LOADED")
 
 print("> CONNECTING TO DATABASE")
@@ -45,8 +46,8 @@ async def process_command(message:discord.Message):
   user_command=message.content.lower().split(" ")
   user_command[0] = user_command[0].replace("!","")
   # If the user's first word matches one of the commands in configuration
-  if user_command[0] in config.keys():
-    if config[user_command[0]]["enabled"]:
+  if user_command[0] in config["commands"].keys():
+    if config["commands"][user_command[0]]["enabled"]:
       # TODO: Validate user's command
       await eval(user_command[0] + "(message)")
     else:
@@ -69,24 +70,6 @@ async def on_ready():
   print("> BOT STARTED AND LISTENING FOR COMMANDS!!!")
 
 
-@client.event
-async def on_raw_reaction_add(payload:discord.RawReactionActionEvent):
-  global TRIVIA_ANSWERS, POKER_GAMES
-  if payload.user_id != client.user.id:
-    # poker reacts
-    if payload.message_id in POKER_GAMES:
-      if payload.user_id == POKER_GAMES[payload.message_id]["user"]:
-        if payload.emoji.name == "✅":
-          await resolve_poker(payload.message_id)
-      else:
-        user = await client.fetch_user(payload.user_id)
-        await POKER_GAMES[payload.message_id]["message"].remove_reaction(payload.emoji,user)
-    # trivia reacts
-    if TRIVIA_MESSAGE and payload.message_id == TRIVIA_MESSAGE.id:
-      #emoji = await discord.utils.get(TRIVIA_MESSAGE.reactions, emoji=payload.emoji.name)
-      user = await client.fetch_user(payload.user_id)
-      await TRIVIA_MESSAGE.remove_reaction(payload.emoji, user)
-      TRIVIA_ANSWERS[payload.user_id] = payload.emoji.name
 
 # Engage!
 client.run(DISCORD_TOKEN)

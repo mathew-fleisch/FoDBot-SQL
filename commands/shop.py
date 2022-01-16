@@ -5,7 +5,7 @@ from .common import *
 # This function is the main entrypoint of the !shop command
 # and will a user's wager value to the amount passed between 1-25
 async def shop(message:discord.Message):
-  f = open(config["shop"]["data"])
+  f = open(config["commands"]["shop"]["data"])
   shop_data = json.load(f)
   f.close()
   if message.content.lower() == "!shop":
