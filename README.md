@@ -55,7 +55,7 @@ Additional [discord role permissions](https://support.discord.com/hc/en-us/artic
 
 ## Commands
 
-Bot commands are triggered by typing command keys followed by an exclamation point. Commands must be defined in the [configuration.json](configuration.json) file, a python file in the [commands directory](commands), and an import line added to [main.py](main.py).
+Bot commands are triggered by typing an exclamation point followed by a command. Commands must be defined in the [configuration.json](configuration.json) file, a python file in the [commands directory](commands), and an import line added to [main.py](main.py).
 
 | File                                    | Command                                     | Description                                                                                                                             |
 | :-------------------------------------- | :------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------------------------- |
