@@ -240,7 +240,7 @@
   "TEST" : {
     "files" : "./images/slots/test/",
     "custom_jackpots" : [],
-    "payout" : 0,
+    "payout" : 100,
     "matches" : {
       "armus" : ["oops all armus"]
     }

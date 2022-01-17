@@ -80,7 +80,7 @@ async def slots(message:discord.Message):
       UNITED FEDERATION OF JACKPOTS
 '''
     match_msg += "```" + jackpot_art + "```"
-    match_msg += "\n "+message.author.mention+" wins the pot of: `{0}` ...multiplied by the slots' jackpot payout rate of x{1}... **for a total winnings of `{2}`**\n\nJackpot has been reset to: **`100`**\n\n".format(jackpot_amt, payout, round(jackpot_amt*payout))
+    match_msg += "\n "+message.author.mention+" wins the pot of: `{0}` ...multiplied by the slots' jackpot payout rate of x{1}... **for a total winnings of `{2}`**\n\nJackpot has been reset to: **`250`**\n\n".format(jackpot_amt, payout, round(jackpot_amt*payout))
     win_jackpot(message.author.display_name, message.author.id)
   if total_rewards != 0:
     # WIN

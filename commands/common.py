@@ -36,6 +36,7 @@ TRIVIA_RUNNING = False
 TRIVIA_DATA = {}
 TRIVIA_MESSAGE = None
 TRIVIA_ANSWERS = {}
+EMOJI = {}
 
 def getDB():
   db = mysql.connector.connect(

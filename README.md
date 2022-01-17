@@ -59,7 +59,7 @@ Bot commands are triggered by typing an exclamation point followed by a command.
 
 | Command                                     | File                                    | Description                                                                                                                             |
 | :------------------------------------------ | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------- |
-| `!buy [profile\|badge\|role] [item_number]` | [buy.py](commands/buy.py)               | Allows user to "buy" a profile, badge or role from points earned playing bot games (see ` !shop [profiles\|badges\|roles]` for options) |
+| `!buy [profile\|badge\|role] [item_number]` | [buy.py](commands/buy.py)               | Allows user to "buy" a profile, badge or role from points earned playing bot games (see `!shop` command for options)                    |
 | `!categories`                               | [categories.py](commands/categories.py) | Show possible trivia categories                                                                                                         |
 | `!dustbuster`                               | [dustbuster.py](commands/dustbuster.py) | Return 5 random trek characters as discussion prompt                                                                                    |
 | `!fmk`                                      | [fmk.py](commands/fmk.py)               | Return 3 random trek characters as discussion prompt                                                                                    |
@@ -79,7 +79,6 @@ Bot commands are triggered by typing an exclamation point followed by a command.
 | `!trektalk`                                 | [trektalk.py](commands/trektalk.py)     | Return a random trek related discussion prompt                                                                                          |
 | `!triv`                                     | [triv.py](commands/triv.py)             | Trivia game                                                                                                                             |
 | `!tuvix`                                    | [tuvix.py](commands/tuvix.py)           | Return 2 random trek characters as discussion prompt                                                                                    |
-
 
 ### configuration.json
 
@@ -154,3 +153,10 @@ Each command requires an explicit import in the [main.py](main.py) script.
 ```python
 from commands.setwager import setwager
 ```
+
+
+## TODO
+
+- randomep
+- faketngtitle
+- quiz

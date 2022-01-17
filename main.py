@@ -4,6 +4,7 @@ from commands.categories import categories
 from commands.dustbuster import dustbuster
 from commands.fmk import fmk
 from commands.help import help
+from commands.info import info
 from commands.jackpot import jackpot, jackpots
 from commands.poker import *
 from commands.ping import ping
@@ -55,7 +56,6 @@ async def process_command(message:discord.Message):
   else:
     print("<! ERROR: Unknown command !>")
 
-EMOJI = {}
 @client.event
 async def on_ready():
   global EMOJI
