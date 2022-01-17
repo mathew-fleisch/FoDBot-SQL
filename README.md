@@ -83,7 +83,7 @@ Bot commands are triggered by typing command keys followed by an exclamation poi
 
 ### configuration.json
 
-The configuration.json file defines metadata about each command like what channel they can be executed in, what parameters can be passed, if the command requires additional data loaded, or if it should be enabled/disabled.
+The [configuration.json](configuration.json) file defines metadata about each command like what channel they can be executed in, what parameters can be passed, if the command requires additional data loaded, or if it should be enabled/disabled.
 
 ```json
 "setwager": {
@@ -100,7 +100,7 @@ The configuration.json file defines metadata about each command like what channe
 
 ### commands/command.py
 
-Each command requires a python script that accepts a discord message as input where the first word matches the filename (Example: `!setwager 25` => `commands/setwager.py`)
+Each command requires a python script that accepts a discord message as input where the first word matches the filename (Example: `!setwager 25` => [commands/setwager.py](commands/setwager.py))
 
 ```python
 from .common import *
