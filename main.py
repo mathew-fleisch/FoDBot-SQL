@@ -6,9 +6,12 @@ from commands.fmk import fmk
 from commands.help import help
 from commands.info import info
 from commands.jackpot import jackpot, jackpots
+from commands.migrate import migrate
 from commands.poker import *
 from commands.ping import ping
 from commands.profile import profile
+from commands.quiz import quiz
+from commands.report import report
 from commands.scores import scores
 from commands.setwager import setwager
 from commands.shop import shop
@@ -17,7 +20,6 @@ from commands.triv import *
 from commands.trekduel import trekduel
 from commands.trektalk import trektalk
 from commands.tuvix import tuvix
-from commands.quiz import quiz
 print("> ENVIRONMENT VARIABLES AND COMMANDS LOADED")
 
 print("> CONNECTING TO DATABASE")

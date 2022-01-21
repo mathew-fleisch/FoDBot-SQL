@@ -3,7 +3,7 @@ from .common import *
 # scores() - Entrypoint for !scores command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !scores command
-# and will a user's wager value to the amount passed between 1-25
+# and will return the leaderboard for the top 25 players
 async def scores(message:discord.Message):
   scores = get_high_scores()
   table = []

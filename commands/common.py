@@ -20,7 +20,9 @@ from treys import Card, Evaluator, Deck
 # Load variables from .env file
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
+TMDB_IMG_PATH = "https://image.tmdb.org/t/p/original"
 tmdb.API_KEY = os.getenv('TMDB_KEY')
+LOG = []
 DB_PASS = os.getenv('DB_PASS')
 DB_HOST = os.getenv('DB_HOST')
 DB_NAME = os.getenv('DB_NAME')

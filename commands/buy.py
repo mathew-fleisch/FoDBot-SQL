@@ -3,7 +3,7 @@ from .common import *
 # buy() - Entrypoint for !buy command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !buy command
-# and will a user's wager value to the amount passed between 1-25
+# and will allow a user to buy profiles, badges and roles
 async def buy(message:discord.Message):
   f = open(config["commands"]["buy"]["data"])
   buy_data = json.load(f)

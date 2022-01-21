@@ -3,7 +3,7 @@ from .common import *
 # trekduel() - Entrypoint for !trekduel command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !trekduel command
-# and will a user's wager value to the amount passed between 1-25
+# and will return a prompt with two random characters
 async def trekduel(message:discord.Message):
   f = open(config["commands"]["trekduel"]["data"])
   characters = f.read().splitlines()

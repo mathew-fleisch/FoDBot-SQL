@@ -3,7 +3,7 @@ from .common import *
 # shop() - Entrypoint for !shop command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !shop command
-# and will a user's wager value to the amount passed between 1-25
+# and will allow a user to view possible profiles, badges and roles to buy with buy command
 async def shop(message:discord.Message):
   f = open(config["commands"]["shop"]["data"])
   shop_data = json.load(f)

@@ -3,7 +3,7 @@ from .common import *
 # tuvix() - Entrypoint for !tuvix command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !tuvix command
-# and will a user's wager value to the amount passed between 1-25
+# and will return a prompt with two random characters
 async def tuvix(message:discord.Message):
   f = open(config["commands"]["tuvix"]["data"])
   tuvixes = f.read().splitlines()

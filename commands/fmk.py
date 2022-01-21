@@ -3,7 +3,7 @@ from .common import *
 # fmk() - Entrypoint for !fmk command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !fmk command
-# and will a user's wager value to the amount passed between 1-25
+# and will return a prompt with three random characters
 async def fmk(message:discord.Message):
   f = open(config["commands"]["fmk"]["data"])
   fmk_characters = f.read().splitlines()
