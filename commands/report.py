@@ -3,8 +3,8 @@ from .common import *
 # report() - Entrypoint for !report command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !report command
-# and will a user's wager value to the amount passed between 1-25
 async def report(message:discord.Message):
+  global LOG
   if len(LOG) != 0:
     msg = "```QUIZ REPORT: \n"
     for l in LOG:

@@ -13,6 +13,7 @@ FUZZ = {}
 # This function is the main entrypoint of the !quiz command
 # and will start a quiz to see who can name an episode title based on a still images from the episode
 async def quiz(message:discord.Message):
+  global LOG
   if not QUIZ_EPISODE:
     await message.channel.send("Getting episode image, please stand by...")
     episode_quiz.start(message)
@@ -36,9 +37,12 @@ async def quiz(message:discord.Message):
     pratio = fuzz.partial_ratio(correct_answer, guess)
     # arbitrary single-number score
     normalness = round((ratio + pratio) / 2)
+    logger.info("ratio: " + str(ratio))
+    logger.info("pratio: " + str(pratio))
     # add message to the log for reporting
     if (ratio != 0) and (pratio != 0):
       LOG.append([guess, ratio, pratio])
+    logger.info("LOG: " + str(LOG))
     # check answer
     if (ratio >= threshold and pratio >= threshold) or (guess == correct_answer):
       # correct answer      
@@ -91,8 +95,8 @@ async def episode_quiz(message):
   QUIZ_INDEX = episode
   QUIZ_EPISODE = show_data["episodes"][episode]
   QUIZ_SHOW = selected_show # current show
-  print("Correct answer: " + QUIZ_EPISODE["title"])
-  print(f"{QUIZ_EPISODE}")
+  logger.info("Correct answer: " + QUIZ_EPISODE["title"])
+  logger.debug(f"{QUIZ_EPISODE}")
   image = random.choice(QUIZ_EPISODE["stills"])
   r = requests.get(TMDB_IMG_PATH + image, headers={'user-agent': 'Mozilla/5.0'})
   with open('./images/ep.jpg', 'wb') as f:
@@ -106,7 +110,7 @@ async def episode_quiz(message):
 async def quiz_finished():
   global QUIZ_EPISODE, QUIZ_INDEX, CORRECT_ANSWERS, FUZZ, QUIZ_SHOW, PREVIOUS_EPS
   #await asyncio.sleep(1)
-  print("Ending quiz...")
+  logger.info("Ending quiz...")
 
   f = open("./data/episodes/" + QUIZ_SHOW + ".json")
   show_data = json.load(f)
@@ -127,7 +131,7 @@ async def quiz_finished():
   await quiz_channel.send(msg)
   # embed = await get_show(show_data, QUIZ_INDEX)
   # await quiz_channel.send(embed=embed)
-  display_embed = await get_show(show_data, QUIZ_INDEX)
+  display_embed = await get_show(show_data, QUIZ_INDEX, QUIZ_SHOW)
   embed=discord.Embed(title=display_embed["title"], url=display_embed["url"], description=display_embed["description"], color=0xFFFFFF)
   embed.set_thumbnail(url=display_embed["still"])
   await quiz_channel.send(embed=embed)
@@ -138,4 +142,4 @@ async def quiz_finished():
   QUIZ_SHOW = False 
   QUIZ_EPISODE = False # the current episode
   QUIZ_INDEX = -1
-  print("Quiz finished!")
+  logger.info("Quiz finished!")

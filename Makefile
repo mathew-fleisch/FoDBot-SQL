@@ -47,5 +47,9 @@ start: setup
 
 .PHONY: start-docker
 start-docker:
-	@docker run --rm -it --name ${BOT_CONTAINER_NAME} -v ${PWD}:/bot -w /bot ${BOT_CONTAINER_NAME}
+	@docker run --rm -it \
+		--name ${BOT_CONTAINER_NAME} \
+		-v ${PWD}:/bot \
+		-w /bot \
+		${BOT_CONTAINER_NAME}
 

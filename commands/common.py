@@ -16,13 +16,25 @@ import treys
 from treys import evaluator
 import numpy as np
 from treys import Card, Evaluator, Deck
+import logging
+import sys
 
 # Load variables from .env file
 load_dotenv()
+
+logger = logging.getLogger()
+logger.setLevel(os.getenv('LOG_LEVEL'))
+handler = logging.StreamHandler(sys.stdout)
+# handler.setLevel(logging.INFO)
+formatter = logging.Formatter("%(asctime)s - %(message)s")
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+LOG = []
+
+
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 TMDB_IMG_PATH = "https://image.tmdb.org/t/p/original"
 tmdb.API_KEY = os.getenv('TMDB_KEY')
-LOG = []
 DB_PASS = os.getenv('DB_PASS')
 DB_HOST = os.getenv('DB_HOST')
 DB_NAME = os.getenv('DB_NAME')
@@ -73,7 +85,7 @@ def seed_db():
   query.execute("SELECT count(id) as total_jackpots from jackpots limit 1")
   data = query.fetchone()
   if data["total_jackpots"] == 0:
-    print("> SEEDING JACKPOT")
+    logger.info("SEEDING JACKPOT")
     insert = db.cursor()
     insert.execute("INSERT INTO jackpots (jackpot_value) VALUES (250)")
     db.commit()
@@ -131,7 +143,7 @@ def register_player(user):
   sql = "INSERT INTO users (discord_id, name, mention) VALUES (%s, %s, %s)"
   vals = (user.id, user.display_name, user.mention)
   query.execute(sql, vals)
-  print("Registering user to DB: {} {} {}".format(user.id, user.display_name, user.mention))
+  logger.info("Registering user to DB: {} {} {}".format(user.id, user.display_name, user.mention))
   db.commit()
   query.close()
   db.close()
@@ -144,7 +156,7 @@ def register_player(user):
 # This function will update the profile_card value
 # for a specific user
 def update_player_profile_card(discord_id, card):
-  print(f"Updating user {discord_id} with new card: {card}")
+  logger.info(f"Updating user {discord_id} with new card: {card}")
   db = getDB()
   query = db.cursor()
   sql = "UPDATE users SET profile_card = %s WHERE discord_id = %s"

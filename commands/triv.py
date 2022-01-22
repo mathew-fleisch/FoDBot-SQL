@@ -11,8 +11,8 @@ async def trivia_quiz(category=None):
   else:
     question = await trivia.question(amount=1, quizType='multiple')
   TRIVIA_DATA = question[0]
-  print("Using category ", category)
-  print("correct answer: " + TRIVIA_DATA["correct_answer"])
+  logger.info("Using category ", category)
+  logger.info("correct answer: " + TRIVIA_DATA["correct_answer"])
   answers = TRIVIA_DATA["incorrect_answers"]
   answers.append(TRIVIA_DATA["correct_answer"])
   random.shuffle(answers)
@@ -38,7 +38,7 @@ async def trivia_quiz(category=None):
 @trivia_quiz.after_loop
 async def end_trivia():
   global TRIVIA_ANSWERS, TRIVIA_DATA, TRIVIA_RUNNING, TRIVIA_MESSAGE
-  print("Trivia complete!")
+  logger.info("Trivia complete!")
   rewards = {
     "easy" : 5,
     "medium" : 10,
@@ -101,7 +101,7 @@ async def triv(message:discord.Message):
     if trivia_category.isnumeric() and int(trivia_category) > 0 and int(trivia_category) < len(trivia_data["categories"]):
       
       trivia_cat_id = int(trivia_category)
-      print("Starting category trivia quiz ", trivia_cat_id)
+      logger.info("Starting category trivia quiz ", trivia_cat_id)
       await trivia_quiz.start(category=trivia_cat_id)
     else:
       await trivia_quiz.start()

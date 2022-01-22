@@ -20,10 +20,10 @@ async def slots(message:discord.Message):
     show = message.content.lower().replace("!slots ", "").upper()
   else:
     show = random.choice(["TNG", "DS9", "VOY", "HOLODECK"])
-  print("show: " + show)
+  logger.info("show: " + show)
   id = message.author.id
   player = get_player(id)
-  print(player)
+  logger.debug(player)
   free_spin = player["spins"] < 5 # true or false
   wager = player["wager"]
   score_mult = wager
@@ -32,7 +32,7 @@ async def slots(message:discord.Message):
     score_mult = 1
   total_rewards = 0
   payout = SLOTS[show]["payout"]
-  print("payout" + str(payout))
+  logger.info("payout" + str(payout))
   if player["score"] < wager and not free_spin:
     await message.channel.send(f"You need at least {wager} point(s) to spin! Play the quiz to get more points or try changing your wager")
   else:

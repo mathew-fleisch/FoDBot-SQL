@@ -1,28 +1,31 @@
 from .common import *
 import re
+from os.path import exists
 
 # info() - Entrypoint for !info command
 # message[required]: discord.Message
 # This function is the main entrypoint of the !info command
 async def info(message:discord.Message):
-  f = open("./data/episodes/tng.json")
-  show_data = json.load(f)
-  f.close()
   user_command = message.content.lower().replace("!info ", "").split()
   found = False
   if len(user_command) == 2:
-    show = user_command[0]
-    season = re.sub(r'e.*', '', user_command[1]).replace("s","")
-    episode = re.sub(r'.*e', '', user_command[1])
-    print(f"{show} {season}x{episode}")
-    show_index = -1
-    for ep in show_data["episodes"]:
-      show_index = show_index + 1
-      if ep["season"] == season and ep["episode"] == episode:
-        found = True
-        break
+    show_key = user_command[0]
+    raw_season_episode = user_command[1]
+    if  exists("./data/episodes/" + show_key + ".json"):
+      f = open("./data/episodes/" + show_key + ".json")
+      show_data = json.load(f)
+      f.close()
+      season = re.sub(r'e.*', '', raw_season_episode).replace("s","")
+      episode = re.sub(r'.*e', '', raw_season_episode)
+      logger.info(f"{show_key} {season}x{episode}")
+      show_index = -1
+      for ep in show_data["episodes"]:
+        show_index = show_index + 1
+        if ep["season"] == season and ep["episode"] == episode:
+          found = True
+          break
   if found:
-    display_embed = await get_show(show_data, show_index)
+    display_embed = await get_show(show_data, show_index, show_key)
     embed=discord.Embed(title=display_embed["title"], \
       url=display_embed["url"], \
       description=display_embed["description"], \
@@ -32,28 +35,41 @@ async def info(message:discord.Message):
   else:
     await message.channel.send("Could not find this episode.\n" \
       + "Usage: `!info [show] [s##e##]`\n" \
+      + "show: " + '|'.join(config["commands"]["info"]["parameters"][0]["allowed"]) \
       + "If this episode should exist, or is incorrect, help fix the source data here:\n" \
       + "https://github.com/jp00p/FoDBot-SQL/tree/main/data/episodes")
 
 
-async def get_show(show_data, show_index):
-  print(f"get_show(show_data, {show_index})")
-  # print(f"{show_data}")
-  pods = "TGG: N/A\n"
+async def get_show(show_data, show_index, show_key):
+  logger.info(f"get_show(show_data, {show_index}, {show_key})")
   tep = show_data["episodes"][show_index]
+  logger.debug(f"{tep}")
+  pods = "TGG: N/A\n"
   if len(tep["podcasts"]) > 0:
     pods = "TGG: [" + tep["podcasts"][0]["episode"] + "]" \
       +"(" + tep["podcasts"][0]["link"] + ")\n"
-  display_title = "TNG[s" + tep["season"] + "e" + tep["episode"] + "] - " \
+  display_title = show_key.upper() \
+    + "[s" + tep["season"] + "e" + tep["episode"] + "] - " \
     + tep["title"]
-  display_url = "https://memory-alpha.fandom.com/wiki/" + tep["memoryalpha"]
+
+  imdb = "imdb"
+  if tep["imdb"]:
+    imdb = "[imdb](https://www.imdb.com/title/" + tep["imdb"] + ")"
+
+  memoryalpha = "memoryalpha"
+  display_url = "https://i.imgur.com/quQnKnk.jpeg"
+  if tep["memoryalpha"]:
+    display_url = "https://memory-alpha.fandom.com/wiki/" + tep["memoryalpha"]
+    memoryalpha = "[memoryalpha](" + display_url + ")"
+
   display_description = \
-    "[imdb](https://www.imdb.com/title/" + tep["imdb"] + ") | " \
-    + "[memory alpha](" + display_url + ")\n" \
+    imdb + " | " + memoryalpha + "\n" \
     + pods \
     + "Airdate: " + tep["airdate"] + "\n" \
     + tep["description"]
-  display_random_image = random.choice(tep["stills"])
+  display_random_image = "https://i.imgur.com/quQnKnk.jpeg"
+  if len(tep['stills']) > 0:
+    display_random_image = random.choice(tep["stills"])
   ret = {
     "title": display_title,
     "url": display_url,
