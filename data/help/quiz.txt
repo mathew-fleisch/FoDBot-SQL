@@ -6,14 +6,12 @@ Correctitude is calculated using: <https://en.wikipedia.org/wiki/Levenshtein_dis
 Only one quiz can be active at a time
 
 **QUIZ COMMANDS**
-`!quiz` - run a Trek quiz!
-`!tvquiz` - run a non-Trek quiz!
-`!simpsons` - run a Simpsons quiz!
+`!quiz [tng|voy|ds9|friends|firefly|simpsons|enterprise|tos|lowerdecks|disco|picard|tas|sunny]` - Guess the episode from a screen-shot!
 `!scores` - see the top scores
 `!report` - see the fuzziness of the last quiz answers (you want both numbers between 72-80 for the bonus)
 `!profile` - see your profile card
 
 **TRIVIA COMMANDS**
-`!trivia` - get a random trivia question!
-`!trivia 1` - get trivia from a specific category
+`!triv` - get a random trivia question!
+`!triv 1` - get trivia from a specific category
 `!categories` - list all the trivia categories
