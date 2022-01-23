@@ -44,26 +44,30 @@ async def get_show(show_data, show_index, show_key):
   logger.info(f"get_show(show_data, {show_index}, {show_key})")
   tep = show_data["episodes"][show_index]
   logger.debug(f"{tep}")
-  pods = "TGG: N/A\n"
+  pods = ""
   if len(tep["podcasts"]) > 0:
-    pods = "TGG: [" + tep["podcasts"][0]["episode"] + "]" \
-      +"(" + tep["podcasts"][0]["link"] + ")\n"
-  display_title = show_key.upper() \
-    + "[s" + tep["season"] + "e" + tep["episode"] + "] - " \
+    for pod in tep["podcasts"]:
+      pods = pods + pod["title"] \
+      + ": [" + pod["episode"] + "]" \
+      +"(" + pod["link"] + ")\n"
+  display_title = show_data["title"] + "\n" \
+    + "s" + tep["season"] + "e" + tep["episode"] + ": " \
     + tep["title"]
 
+  # If memoryalpha url exists, use that, if not use imdb. If neither exist, use this picture:
+  display_url = "https://i.imgur.com/quQnKnk.jpeg"
   imdb = "imdb"
   if tep["imdb"]:
+    display_url = "https://www.imdb.com/title/" + tep["imdb"]
     imdb = "[imdb](https://www.imdb.com/title/" + tep["imdb"] + ")"
 
-  memoryalpha = "memoryalpha"
-  display_url = "https://i.imgur.com/quQnKnk.jpeg"
+  memoryalpha = ""
   if tep["memoryalpha"]:
     display_url = "https://memory-alpha.fandom.com/wiki/" + tep["memoryalpha"]
-    memoryalpha = "[memoryalpha](" + display_url + ")"
+    memoryalpha = " | [memoryalpha](" + display_url + ")"
 
   display_description = \
-    imdb + " | " + memoryalpha + "\n" \
+    imdb + memoryalpha + "\n" \
     + pods \
     + "Airdate: " + tep["airdate"] + "\n" \
     + tep["description"]

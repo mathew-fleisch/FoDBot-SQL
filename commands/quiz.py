@@ -26,7 +26,7 @@ async def quiz(message:discord.Message):
     correct_answer = "".join(l for l in correct_answer if l not in string.punctuation).split()
     guess = "".join(l for l in guess if l not in string.punctuation).split()
     # remove common words
-    stopwords = ["the", "a", "of", "is", "teh", "th", "eht", "eth", "of", "for", "part 1", "part 2", "part ii", "part i", "in", "are", "an", "as", "and"]
+    stopwords = ["the", "a", "of", "is", "teh", "th", "eht", "eth", "of", "for", "part 1", "part 2", "part 3", "part i", "part ii", "part iii", "(1)", "(2)", "(3)", "in", "are", "an", "as", "and"]
     resultwords  = [word for word in correct_answer if word.lower() not in stopwords]
     guesswords = [word for word in guess if word.lower() not in stopwords]
     # rejoin the strings
@@ -43,6 +43,7 @@ async def quiz(message:discord.Message):
     if (ratio != 0) and (pratio != 0):
       LOG.append([guess, ratio, pratio])
     logger.info("LOG: " + str(LOG))
+    await message.add_reaction('\N{THUMBS UP SIGN}')
     # check answer
     if (ratio >= threshold and pratio >= threshold) or (guess == correct_answer):
       # correct answer      
@@ -76,7 +77,8 @@ async def episode_quiz(message):
   global QUIZ_EPISODE, QUIZ_INDEX, TMDB_IMG_PATH, LAST_SHOW, QUIZ_SHOW, PREVIOUS_EPS, LOG
   quiz_channel = client.get_channel(config["commands"]["quiz"]["channels"][0])
   quiz_spl = message.content.lower().replace("!quiz ", "").split()
-  # User selects tos|tng|ds9|voy|enterprise|disco
+  # User selects tos|tng|ds9|voy|enterprise|disco etc
+  logger.info("Selected Show: " + quiz_spl[0])
   if quiz_spl[0] in config["commands"]["quiz"]["parameters"][0]["allowed"]:
     selected_show = quiz_spl[0]
   else:
