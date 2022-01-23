@@ -12,6 +12,7 @@ from commands.ping import ping
 from commands.profile import profile
 from commands.quiz import quiz
 from commands.report import report
+from commands.randomep import randomep
 from commands.scores import scores
 from commands.setwager import setwager
 from commands.shop import shop

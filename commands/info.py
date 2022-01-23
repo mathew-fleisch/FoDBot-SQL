@@ -35,7 +35,7 @@ async def info(message:discord.Message):
   else:
     await message.channel.send("Could not find this episode.\n" \
       + "Usage: `!info [show] [s##e##]`\n" \
-      + "show: " + '|'.join(config["commands"]["info"]["parameters"][0]["allowed"]) \
+      + "show: " + '|'.join(config["commands"]["info"]["parameters"][0]["allowed"]) + "\n" \
       + "If this episode should exist, or is incorrect, help fix the source data here:\n" \
       + "https://github.com/jp00p/FoDBot-SQL/tree/main/data/episodes")
 
