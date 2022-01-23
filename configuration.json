@@ -34,6 +34,16 @@
       "data": "data/help.json",
       "parameters": []
     },
+    "info": {
+      "channels": [821892686201094154],
+      "enabled": true,
+      "data": "data/info.json",
+      "parameters": [{
+        "name": "show",
+        "allowed": ["tng", "voy", "ds9", "friends", "firefly", "simpsons", "enterprise", "tos", "lowerdecks", "disco", "picard", "tas", "sunny"],
+        "required": false
+      }]
+    },
     "jackpot": {
       "channels": [821892686201094154],
       "enabled": true,
@@ -45,6 +55,16 @@
       "enabled": true,
       "data": null,
       "parameters": []
+    },
+    "migrate": {
+      "channels": [821892686201094154],
+      "enabled": false,
+      "data": "data/info.json",
+      "parameters": [{
+        "name": "show",
+        "allowed": ["tng", "voy", "ds9", "friends", "firefly", "simpsons", "enterprise", "tos", "lowerdecks", "disco", "picard", "tas", "sunny"],
+        "required": false
+      }]
     },
     "ping": {
       "channels": [821892686201094154],
@@ -68,7 +88,27 @@
       "channels": [821892686201094154],
       "enabled": true,
       "data": null,
+      "parameters": [{
+        "name": "show",
+        "allowed": ["tng", "voy", "ds9", "friends", "firefly", "simpsons", "enterprise", "tos", "lowerdecks", "disco", "picard", "tas", "sunny"],
+        "required": false
+      }]
+    },
+    "report": {
+      "channels": [821892686201094154],
+      "enabled": true,
+      "data": null,
       "parameters": []
+    },
+    "randomep": {
+      "channels": [821892686201094154],
+      "enabled": true,
+      "data": null,
+      "parameters": [{
+        "name": "show",
+        "allowed": ["tng", "voy", "ds9", "friends", "firefly", "simpsons", "enterprise", "tos", "lowerdecks", "disco", "picard", "tas", "sunny"],
+        "required": false
+      }]
     },
     "setwager": {
       "channels": [821892686201094154],
@@ -102,7 +142,7 @@
       "data": "data/slots.json",
       "parameters": [{
         "name": "show",
-        "allowed": ["tng","ds9","voy","holodeck","ships","test"],
+        "allowed": ["tng","ds9","voy","holodeck","ships"],
         "required": false
       }]
     },
