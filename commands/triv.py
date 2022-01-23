@@ -11,7 +11,7 @@ async def trivia_quiz(category=None):
   else:
     question = await trivia.question(amount=1, quizType='multiple')
   TRIVIA_DATA = question[0]
-  logger.info("Using category ", category)
+  logger.info("Using category " + str(category))
   logger.info("correct answer: " + TRIVIA_DATA["correct_answer"])
   answers = TRIVIA_DATA["incorrect_answers"]
   answers.append(TRIVIA_DATA["correct_answer"])
