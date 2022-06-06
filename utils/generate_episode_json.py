@@ -107,6 +107,7 @@ def gather_filtered_rss_entries(series_prefix, tseason, tepisode):
     if not regex_result:
       continue
     series_tag = regex_result.group(2).upper()
+    # hackerman
     if series_tag == "VOYAGER":
         series_tag = "VOY"
     this_season = regex_result.group(3)
