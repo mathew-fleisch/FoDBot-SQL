@@ -28,6 +28,13 @@ shows = {
     "animated": False,
     "imdb": "tt0092455"
   },
+  "ds9": {
+    "tvdb":580,
+    "title": "Star Trek: Deep Space Nine",
+    "trek": True,
+    "animated": False,
+    "imdb": ""
+  },
   "voy": {
     "tvdb":1855,
     "title": "Star Trek: Voyager",
@@ -35,13 +42,6 @@ shows = {
     "animated": False,
     "imdb": "",
     "episodes": [],
-  },
-  "ds9": {
-    "tvdb":580,
-    "title": "Star Trek: Deep Space Nine",
-    "trek": True,
-    "animated": False,
-    "imdb": ""
   }
 }
 
