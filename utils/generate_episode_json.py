@@ -45,6 +45,7 @@ shows = {
   }
 }
 
+# To Do: The Greatest Discovery
 # TGD Podcast feed: https://feeds.simplecast.com/d1rbEtgZ
 # This uses a different naming convention for episodes, so we need to filter
 # ,
@@ -102,7 +103,7 @@ def gather_filtered_rss_entries(series_prefix, tseason, tepisode):
   filtered_entries = []
   for entry in feed['entries']:
     entry_title = entry['title']
-    regex_result = re.search('(.+) \(S(\d+)E(\d+)\)', entry_title, re.IGNORECASE)
+    regex_result = re.search('(.+) \((\w+)\sS(\d+)E(\d+)\)', entry_title, re.IGNORECASE)
     if not regex_result:
       continue
     series_tag = regex_result.group(2).upper()
@@ -180,7 +181,6 @@ def generate_recordset(series_prefix, recordset):
           this_episode["tvdb"] = episode_details["id"]
           this_episode["season"] = tseason
           this_episode["episode"] = tepisode
-          # this_episode["stills"] = tmdb_episode.images()
           episode_external_ids = tmdb_episode.external_ids()
           this_episode["imdb"]=episode_external_ids["imdb_id"]
           if len(episode_external_ids) > 0:
@@ -216,12 +216,9 @@ def generate_recordset(series_prefix, recordset):
         if this_episode:
           episodes.append(this_episode)
         continue
-        # if failed > 0:
-        #   moveon = moveon + 1
-        #   break
       entry_title = entry['title']
       pprint.pprint(f"Pod title: {entry_title}")
-      regex_result = re.search('(.+) \(S(\d+)E(\d+)\)', entry_title, re.IGNORECASE)
+      regex_result = re.search('(.+) \((\w+)\sS(\d+)E(\d+)\)', entry_title, re.IGNORECASE)
       pod_title = regex_result.group(1)
       series_tag = regex_result.group(2)
       season_number = regex_result.group(3).rjust(2, '0')
@@ -232,7 +229,6 @@ def generate_recordset(series_prefix, recordset):
       if "podcasts" not in this_episode.keys() or len(this_episode["podcasts"]) == 0:
         print("Checking MaximumFun information...")
         # Get MaxFun link from Google Search on Pod Title
-        # this_episode["podcasts"] = []
         tgg_search = google_search(f"The Greatest Generation MaximumFun {pod_title}")
         pod_link = tgg_search['link']
 
