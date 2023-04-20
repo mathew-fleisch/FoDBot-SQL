@@ -2519,7 +2519,15 @@
       "episode": "21",
       "imdb": "tt0708919",
       "memoryalpha": "Juggernaut_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 466,
+          "airdate": "2023.04.17",
+          "episode": "Sonic Dick Shower",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-466-sonic-dick-shower-voy-s5e21/"
+        }
+      ],
       "season": "05",
       "stills": [
         "https://image.tmdb.org/t/p/original/pgL7Cb0pOyLJoGI3dpg4A9GuTxj.jpg"
