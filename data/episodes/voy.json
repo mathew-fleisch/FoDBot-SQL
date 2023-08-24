@@ -2982,7 +2982,15 @@
       "episode": "14",
       "imdb": "tt0708930",
       "memoryalpha": "Memorial_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 484,
+          "airdate": "2023.08.21",
+          "episode": "Kevin Lives!",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/2MN4Z3uZKiWXRbh2exwYSdzl611.jpg",
