@@ -3008,7 +3008,15 @@
       "episode": "15",
       "imdb": "tt0708999",
       "memoryalpha": "Tsunkatse_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 485,
+          "airdate": "2023.08.28",
+          "episode": "Two Fighters, One Match",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/ext9UB8WrJJcp5hWpSB7yFtMmKL.jpg",
