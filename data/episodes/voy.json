@@ -3141,7 +3141,15 @@
       "episode": "20",
       "imdb": "tt0708904",
       "memoryalpha": "Good_Shepherd_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 490,
+          "airdate": "2023.10.02",
+          "episode": "Dark Matter Deer Blood",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/5GUeq5Ghecb5PabFtjp1cUEZRMp.jpg",
