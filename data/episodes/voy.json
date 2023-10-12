@@ -3168,7 +3168,15 @@
       "episode": "21",
       "imdb": "tt0708925",
       "memoryalpha": "Live_Fast_and_Prosper_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 491,
+          "airdate": "2023.10.09",
+          "episode": "That\u2019s My Canadian Car",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/ujuUMiBIH8KypcC6vGI1YwIOGAb.jpg",
