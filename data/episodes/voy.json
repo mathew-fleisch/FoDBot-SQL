@@ -3220,7 +3220,15 @@
       "episode": "23",
       "imdb": "tt0708901",
       "memoryalpha": "Fury_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 493,
+          "airdate": "2023.10.23",
+          "episode": "Freshening up the Hallway as She Goes",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/mBmvt2u76GHNYNrWLJLkcHOeTFa.jpg",
