@@ -3246,7 +3246,15 @@
       "episode": "24",
       "imdb": "tt0708922",
       "memoryalpha": "Life_Line_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 494,
+          "airdate": "2023.10.30",
+          "episode": "A Peepee Poopoo Based Star Trek Podcast",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/o1e08lf88xUQjYwhcxpdqBiiXIG.jpg",
