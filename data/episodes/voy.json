@@ -3273,7 +3273,15 @@
       "episode": "25",
       "imdb": "tt0708983",
       "memoryalpha": "The_Haunting_of_Deck_Twelve_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 495,
+          "airdate": "2023.11.06",
+          "episode": "Emergency Modelo",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-495-emergency-modelo-voy-s6e25/"
+        }
+      ],
       "season": "06",
       "stills": [
         "https://image.tmdb.org/t/p/original/vkIUPpj2PceJeRXvWnNWYdzSQFt.jpg",
