@@ -3328,7 +3328,15 @@
       "episode": "01",
       "imdb": "tt0709004",
       "memoryalpha": "Unimatrix_Zero,_Part_II_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 497,
+          "airdate": "2023.11.20",
+          "episode": "The Flattest Pyramid in the Universe",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/m2uTdB3sea3nIf4VlcN1SbhUWSP.jpg",
