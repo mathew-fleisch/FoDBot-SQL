@@ -3409,7 +3409,15 @@
       "episode": "04",
       "imdb": "tt0708959",
       "memoryalpha": "Repression_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 500,
+          "airdate": "2023.12.11",
+          "episode": "Not Bathtub Serious",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/tKwHas7rA8nObFqxru10VkxBLu2.jpg",
