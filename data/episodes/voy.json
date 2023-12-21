@@ -3437,7 +3437,15 @@
       "episode": "05",
       "imdb": "tt0708870",
       "memoryalpha": "Critical_Care_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 501,
+          "airdate": "2023.12.18",
+          "episode": "Tragically Low T",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/nayxyUBuIQimyvDXRqAeJFzOGcv.jpg",
