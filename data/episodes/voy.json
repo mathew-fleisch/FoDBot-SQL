@@ -3464,7 +3464,15 @@
       "episode": "06",
       "imdb": "tt0708916",
       "memoryalpha": "Inside_Man_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 502,
+          "airdate": "2023.12.25",
+          "episode": "Nasty Little Roast Freak",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-502-nasty-little-roast-freak-voy-s7e6/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/i5mZ2tQeCVKoQxTTGkWpe9aTAi7.jpg",
