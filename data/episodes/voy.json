@@ -3491,7 +3491,15 @@
       "episode": "07",
       "imdb": "tt0708859",
       "memoryalpha": "Body_and_Soul_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 503,
+          "airdate": "2024.01.01",
+          "episode": "Food Cuck",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-503-food-cuck-voy-s7e7/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/vhRcqXM3KcELNUVP04fPIYteuuu.jpg",
