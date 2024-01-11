@@ -3518,7 +3518,15 @@
       "episode": "08",
       "imdb": "tt0708937",
       "memoryalpha": "Nightingale_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 504,
+          "airdate": "2024.01.08",
+          "episode": "Syndicated Acne",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-504-syndicated-acne-voy-s7e8/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/1sKBpBIgiLSvEyROMXG5oDwyJTf.jpg",
