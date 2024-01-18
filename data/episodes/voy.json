@@ -3545,7 +3545,15 @@
       "episode": "09",
       "imdb": "tt0394912",
       "memoryalpha": "Flesh_and_Blood_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 505,
+          "airdate": "2024.01.15",
+          "episode": "The Other Throat Goat",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-505-the-other-throat-goat-voy-s7e9/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/25R5mw1KfYiIi4vAVd4hIThwT9e.jpg",
