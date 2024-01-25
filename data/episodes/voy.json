@@ -3572,7 +3572,15 @@
       "episode": "10",
       "imdb": "tt1288527",
       "memoryalpha": "Shattered_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 506,
+          "airdate": "2024.01.22",
+          "episode": "Guilt Bank",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/pvfN7NQK4IqzsAL4oRVx0FxI1zx.jpg",
