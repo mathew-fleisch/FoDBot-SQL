@@ -3600,7 +3600,15 @@
       "episode": "11",
       "imdb": "tt0708970",
       "memoryalpha": "Shattered_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 507,
+          "airdate": "2024.01.29",
+          "episode": "A Very Wet Inferno",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/x6B5LfR3Ft8kJMIxRRnYNWeZneV.jpg",
