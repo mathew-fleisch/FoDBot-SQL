@@ -3630,7 +3630,15 @@
       "episode": "12",
       "imdb": "tt0394914",
       "memoryalpha": "Lineage_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 508,
+          "airdate": "2024.02.05",
+          "episode": "Hosting Trauma",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-508-hosting-trauma-voy-s7e12/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/sDJV2e70oLcis8r3YCQX70nfuzK.jpg",
