@@ -3657,7 +3657,15 @@
       "episode": "13",
       "imdb": "tt0708958",
       "memoryalpha": "Repentance_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 509,
+          "airdate": "2024.02.12",
+          "episode": "To Smash His Hope Nuts",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-509-to-smash-his-hope-nuts-voy-s7e13/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/b86GnvdONscp1IUMDaAL40actAP.jpg",
