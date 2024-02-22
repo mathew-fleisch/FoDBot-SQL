@@ -3684,7 +3684,15 @@
       "episode": "14",
       "imdb": "tt0708950",
       "memoryalpha": "Prophecy_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 510,
+          "airdate": "2024.02.19",
+          "episode": "It Seems Like a Plumbing Issue",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/57S6VUjcIXmngxj1eYXWdRboaUc.jpg",
