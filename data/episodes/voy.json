@@ -3711,7 +3711,15 @@
       "episode": "15",
       "imdb": "tt0708991",
       "memoryalpha": "The_Void_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 511,
+          "airdate": "2024.02.26",
+          "episode": "Bad Grain Thresher Mindset",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-511-bad-grain-thresher-mindset-voy-s7e15/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/emRuwqLaiXWNSLOJLUqv4zurBNa.jpg",
