@@ -3738,7 +3738,15 @@
       "episode": "16",
       "imdb": "tt0394916",
       "memoryalpha": "Workforce_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 512,
+          "airdate": "2024.03.04",
+          "episode": "Hot Tiki Drinks",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/akygTvTLfEgzf28CGLOfekQiB3v.jpg",
