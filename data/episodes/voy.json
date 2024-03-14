@@ -3765,7 +3765,15 @@
       "episode": "17",
       "imdb": "tt0709012",
       "memoryalpha": "Workforce,_Part_II_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 513,
+          "airdate": "2024.03.11",
+          "episode": "Irish Guests",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/gZoUMDTvDtkOrDu1YlVjG7bTvq0.jpg",
