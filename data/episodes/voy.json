@@ -3792,7 +3792,15 @@
       "episode": "18",
       "imdb": "tt0708909",
       "memoryalpha": "Human_Error_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 514,
+          "airdate": "2024.03.18",
+          "episode": "Quid Pro Dome",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-514-quid-pro-dome-voy-s7e18/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/jxpxIUh9zHulC4rjwkgEBJxTmub.jpg",
