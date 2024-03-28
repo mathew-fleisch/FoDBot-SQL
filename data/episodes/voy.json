@@ -3819,7 +3819,15 @@
       "episode": "19",
       "imdb": "tt0708952",
       "memoryalpha": "Q2_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 515,
+          "airdate": "2024.03.25",
+          "episode": "Cancel the Coin",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/6qbtWXPNC09nMeWywNHp3TcZgA7.jpg",
