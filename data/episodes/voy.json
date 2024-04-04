@@ -3846,7 +3846,15 @@
       "episode": "20",
       "imdb": "tt0708851",
       "memoryalpha": "Author,_Author_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 516,
+          "airdate": "2024.04.01",
+          "episode": "All Crust, No Loaf",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/rfDRWarrGrSEIfXuN4WAPCn83aA.jpg",
