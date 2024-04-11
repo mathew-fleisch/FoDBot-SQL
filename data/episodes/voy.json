@@ -3873,7 +3873,15 @@
       "episode": "21",
       "imdb": "tt0708900",
       "memoryalpha": "Friendship_One_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 517,
+          "airdate": "2024.04.08",
+          "episode": "So Many Bubbrles",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/wyOKiiINrjUmAd05ZkpunXBCBB8.jpg",
