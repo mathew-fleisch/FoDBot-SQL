@@ -3929,7 +3929,15 @@
       "episode": "23",
       "imdb": "tt0708907",
       "memoryalpha": "Homestead_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 519,
+          "airdate": "2024.04.22",
+          "episode": "No One\u2019s Paying For Perpetuity Around Here",
+          "link": "https://maximumfun.org/podcasts/greatest-generation/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/58JsQB1q5nyr40k20BwIr2TTb4M.jpg",
