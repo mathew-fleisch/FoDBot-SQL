@@ -3957,7 +3957,15 @@
       "episode": "24",
       "imdb": "tt0708957",
       "memoryalpha": "Renaissance_Man_(episode)",
-      "podcasts": [],
+      "podcasts": [
+        {
+          "title": "The Greatest Generation",
+          "order": 520,
+          "airdate": "2024.04.29",
+          "episode": "Lennies of the World Unite",
+          "link": "https://maximumfun.org/episodes/greatest-generation/ep-520-lennies-of-the-world-unite-voy-s7e24/"
+        }
+      ],
       "season": "07",
       "stills": [
         "https://image.tmdb.org/t/p/original/cDEtVxLe6gjjp7WX09gxqjD8mAW.jpg",
